@@ -7,7 +7,7 @@
     <div class="row gx-5 justify-content-center">
         <div class="col-lg-6">
             <div class="text-center my-5">
-                <h1 class="display-5 fw-bolder text-white mb-2">Listado de usuarios</h1>
+                <h1 class="display-5 fw-bolder text-white mb-2">Listado de asesores</h1>
                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                 </div>
             </div>
@@ -22,10 +22,9 @@
 {% block bodyIndex %}
 
 <div class='container'>
-    {% for usuario in usuarios %}
-        <p>{{ usuario.nombre }} {{ usuario.apellido }}</p>
+    {% for asesor in asesores %}
+        <p>{{ asesor.nombre }} {{ asesor.apellido }}</p>
     {% endfor %}
 </div>
 
 {% endblock bodyIndex %}
-

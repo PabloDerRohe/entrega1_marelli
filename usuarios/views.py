@@ -1,10 +1,29 @@
 from django.shortcuts import render
-
+from .models import Asesor, Post, Usuario
 # Create your views here.
+
+def listado_posts(request):
+    
+    posts = Post.objects.all()
+    
+    datos = {
+        'posts': posts
+    }
+    
+    return render(request, 'usuarios/listado_posts.html', datos)
+
+################# CRUD Usuarios
 
 
 def listado_usuarios(request):
-    return render(request, 'usuarios/listado_usuarios.html', {})
+    
+    usuarios = Usuario.objects.all()
+    
+    datos = {
+        'usuarios': usuarios
+    }
+    
+    return render(request, 'usuarios/listado_usuarios.html', datos)
 
 
 def crear_usuario(request):
@@ -21,3 +40,15 @@ def borrar_usuario(request):
 
 def buscar_usuario(request):
     return render(request, 'usuarios/buscar_usuario.html', {})
+
+################# CRUD Asesores
+
+def listado_asesores(request):
+    
+    asesores = Asesor.objects.all()
+    
+    datos = {
+        'asesores': asesores
+    }
+    
+    return render(request, 'usuarios/listado_asesores.html', datos)

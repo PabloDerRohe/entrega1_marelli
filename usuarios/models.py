@@ -20,6 +20,8 @@ class Usuario(models.Model):
     apellido = models.CharField(max_length=30)
     email = models.EmailField()
 
+    def __str__(self):
+        return self.nombre + ' ' + self.apellido
 
 class Asesor(models.Model):
     
@@ -28,3 +30,5 @@ class Asesor(models.Model):
     email = models.EmailField()
     especialidad = models.CharField(max_length=30)
     
+    def __str__(self):
+        return self.nombre + ' ' + self.apellido
