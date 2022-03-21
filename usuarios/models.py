@@ -11,7 +11,7 @@ class Post(models.Model):
     contenido = models.TextField()
     
     def __str__(self):
-        return self.titulo + ' | ' + str(self.autor)
+        return f'{self.titulo} {str(self.autor)}'
 
 
 class Usuario(models.Model):
@@ -21,7 +21,7 @@ class Usuario(models.Model):
     email = models.EmailField()
 
     def __str__(self):
-        return self.nombre + ' ' + self.apellido
+        return f'{self.nombre} {self.apellido}'
 
 class Asesor(models.Model):
     
@@ -31,4 +31,4 @@ class Asesor(models.Model):
     especialidad = models.CharField(max_length=30)
     
     def __str__(self):
-        return self.nombre + ' ' + self.apellido
+        return f'{self.nombre} {self.apellido} Especialidad: {self.especialidad}'

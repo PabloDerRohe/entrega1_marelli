@@ -1,4 +1,6 @@
-from django.forms import forms
+from django import forms
+from django.contrib.auth.models import User
+from .models import Usuario
 
 
 class UsuarioForm(forms.Form):
@@ -11,7 +13,8 @@ class BuscarUsuario(forms.Form):
     
 class PostForm(forms.Form):
     titulo = forms.CharField(max_length=50)
-    contenido = forms.TextField()
+    autor = forms.ModelChoiceField(queryset=User.objects.all())
+    contenido = forms.CharField(widget=forms.Textarea)
     
 class AsesorForm(forms.Form):
     nombre = forms.CharField(max_length=20)

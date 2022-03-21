@@ -22,7 +22,7 @@
 {% block bodyIndex %}
 
 
-<form action="{% url 'buscar_usuario' %}" method="get">
+<form action="{% url 'buscar_asesor' %}" method="get">
     {% csrf_token %}
     
     <table>
@@ -34,9 +34,9 @@
 
 {% if dato %}
     Se busco por el dato {{dato}}
-    {% for usuario in usuarios_buscados %}
+    {% for asesor in asesores_buscados %}
         <li>
-            {{usuario}}
+            {{asesor}}
         </li>
     {% endfor %}
 {% else %}
