@@ -22,9 +22,21 @@
 {% block bodyIndex %}
 
 <div class='container'>
+    <br>
+    <br>
+    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'crear_asesor' %}">Crear asesor</a>
+    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'buscar_asesor' %}">Buscar asesor</a>
+    <br>
+    <br>
+
     {% for asesor in asesores %}
-        <p>{{ asesor.nombre }} {{ asesor.apellido }} | Especialidad: {{ asesor.especialidad }}</p>
+        <li>{{ asesor.nombre }} {{ asesor.apellido }} | Especialidad: {{ asesor.especialidad }} 
+        <a href={% url 'editar_asesor' asesor.id %}>Editar</a> <a href={% url 'borrar_asesor' asesor.id %}>Borrar</a></li>
     {% endfor %}
+    
+    <br>
+    <br>
+
 </div>
 
 {% endblock bodyIndex %}

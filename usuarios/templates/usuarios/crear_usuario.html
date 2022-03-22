@@ -21,6 +21,8 @@
 {% block bodyIndex %}
 
 <div class='container'>
+    <br>
+    <br>
     <form action="{% url 'crear_usuario' %}" method="post">
     {% csrf_token %}
     
@@ -30,6 +32,9 @@
     
     <input type="submit" placeholder="Crear">
     </form>
+    <br>
+    <br>
+
 </div>
 
 

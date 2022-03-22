@@ -21,7 +21,7 @@
 
 {% block bodyIndex %}
 
-    <form action="{% url 'editar_usuario' usuario.id %}" method="post">
+    <form action="{% url 'editar_asesor' asesor.id %}" method="post">
         {% csrf_token %}
         
         <table>

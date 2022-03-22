@@ -25,14 +25,14 @@
     <br>
     <br>
     <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'crear_usuario' %}">Crear usuario</a>
+    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'buscar_usuario' %}">Buscar usuario</a>
     <br>
     <br>
     {% for usuario in usuarios %}
-        <li> {{ usuario.nombre }} {{ usuario.apellido }} {{usuario.id}} <a href={% url 'editar_usuario' usuario.id %}>Editar</a> <a href={% url 'borrar_usuario' usuario.id %}>Borrar</a></li>
+        <li> {{ usuario.nombre }} {{ usuario.apellido }} <a href={% url 'editar_usuario' usuario.id %}>Editar</a> <a href={% url 'borrar_usuario' usuario.id %}>Borrar</a></li>
     {% endfor %}
     <br>
     <br>
-
 </div>
 
 {% endblock bodyIndex %}

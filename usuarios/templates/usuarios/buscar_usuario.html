@@ -21,7 +21,7 @@
 
 {% block bodyIndex %}
 
-
+<br>
 <form action="{% url 'buscar_usuario' %}" method="get">
     {% csrf_token %}
     
@@ -31,16 +31,23 @@
 
     <input type="submit" placeholder="Enviar">
 </form>
+<br>
 
 {% if dato %}
+    <br>
     Se busco por el dato {{dato}}
     {% for usuario in usuarios_buscados %}
         <li>
             {{usuario}}
         </li>
+        <br>
+
     {% endfor %}
 {% else %}
     No se busco nada...
+    <br>
+    <br>
+
 {% endif %}
     
 

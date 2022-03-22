@@ -22,11 +22,22 @@
 {% block bodyIndex %}
 
 <div class='container'>
+    <br>
+    <br>
+    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'crear_post' %}">Crear post</a>
+    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="{% url 'buscar_post' %}">Buscar post</a>
+    <br>
+    <br>
     {% for post in posts %}
+        <br>
         <h2>{{ post.titulo }}</h2>
         <p>{{ post.autor.first_name }} {{ post.autor.last_name }}</p>
         <p>{{ post.contenido }}</p>
+        <br>
     {% endfor %}
+    <br>
+    <br>
+
 </div>
 
 {% endblock bodyIndex %}

@@ -20,7 +20,9 @@
 
 
 {% block bodyIndex %}
-
+    <br>
+    <br>
+    
     <form action="{% url 'editar_usuario' usuario.id %}" method="post">
         {% csrf_token %}
         
@@ -31,5 +33,7 @@
 
         <input type="submit" placeholder="Actualizar">
     </form>
+    <br>
+    <br>
 
 {% endblock bodyIndex %}
